@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header {
+  position: relative;
+  background-color: #eceac8;
+  padding: 25px;
+  border: 12px solid #cd853f; 
+  border-radius: 23px;
+}
+
+.header-content{
+  display:flex;
+  align-items: center;
+  width: 100%;
+  margin:0 auto;
+}
+
+.h1 a{
+  cursor: pointer; 
+  font-family: Papyrus, fantasy;   
+  font-size: 40px;
+  color:rgb(3, 32, 2);
+  padding-bottom: 5px; 
+  padding-left: 20px; 
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 4px 4px 6px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  padding-right: 50px;
+}
+.h2 a {
+  font-size:20px;
+  text-decoration: none;
+  padding-left: 50px;
+  font-size: 120%;
+  color:rgb(6, 75, 4);
+  font-weight: 545;
+  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; 
+  padding: 3px 10px;
+  transition: background-color 0.3s ease; 
+  cursor: pointer; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+.h3 a{
+  font-size:20px;
+  text-decoration: none;
+  padding-left: 50px;
+  font-size: 120%;
+  color:rgb(6, 75, 4);
+  font-weight: 545;
+  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; 
+  padding: 3px 10px;
+  transition: background-color 0.3s ease; 
+  cursor: pointer; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  margin-right: 10px;
+  
+}
+.h3{
+  margin-left: auto;
+  padding-right:40px;
+  margin-right: 10px; 
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  background-image: url('../styles/searchPageBackground2.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 122vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-bar{
+  background: #fff;
+  width: 90%;
+  max-width: 800px;
+  display:flex;
+  padding: 2px;
+  border-radius: 4px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  top: -10%;
+}
+
+#select{
+  background: #403e46;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color:#fff;
+  font-family:  Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; 
+  width: 190px;
+  padding: 25px 20px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 4px;
+  height: 60px;
+  margin-left: -2px;
+}
+#select span{
+  width: 15px;
+}
+#select ul{
+  position:absolute;
+  top:110%;
+  left:0;
+  list-style: none;
+  background:#f4f4f6;
+  color: #555;
+  font-family:  Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif ;
+  width: 100%;
+  border-radius: 4px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+#select ul li{
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.search-bar input{
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-family: Papyrus, fantasy;
+}
+#select ul.open{
+  max-height: 300px;
+}
+
+.search-button img{
+  width: 50%; 
+  max-width: 50%; 
+  border-radius: 4px;
+ 
+  
+}
+.search-button{
+  cursor: pointer;
+  background: #f9f9cd;
+  max-width: 70px;
+  padding: 6px; 
+  border-radius: 4px;
+  display: flex;
+  align-items: center; 
+  height: 60px;
+  justify-content: center;
+  border: none;
+  position:relative;
+  top: -10%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  transition: box-shadow 0.3s ease; 
+}
+.search-button:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+
