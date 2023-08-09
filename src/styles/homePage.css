@@ -1,78 +1,14 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-#header {
-  position: relative;
-  background-color: #eceac8;
-  padding: 25px;
-  border: 12px solid #cd853f; 
-  border-radius: 23px;
-}
-
-.header-content{
-  display:flex;
-  align-items: center;
-  width: 100%;
-  margin:0 auto;
-}
-
-.h1 a{
-  cursor: pointer; 
-  font-family: Papyrus, fantasy;   
-  font-size: 40px;
-  color:rgb(3, 32, 2);
-  padding-bottom: 5px; 
-  padding-left: 20px; 
-  font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 4px 4px 6px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  padding-right: 50px;
-}
-.h2 a {
-  font-size:20px;
-  text-decoration: none;
-  padding-left: 50px;
-  font-size: 120%;
-  color:rgb(6, 75, 4);
-  font-weight: 545;
-  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; 
-  padding: 3px 10px;
-  transition: background-color 0.3s ease; 
-  cursor: pointer; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
-}
-.h3 a{
-  font-size:20px;
-  text-decoration: none;
-  padding-left: 50px;
-  font-size: 120%;
-  color:rgb(6, 75, 4);
-  font-weight: 545;
-  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; 
-  padding: 3px 10px;
-  transition: background-color 0.3s ease; 
-  cursor: pointer; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
-  margin-right: 10px;
-  
-}
-.h3{
-  margin-left: auto;
-  padding-right:40px;
-  margin-right: 10px; 
-}
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+#header{
+  background-color: #eceac8;
+  border: 12px solid #cd853f; 
+  border-radius: 23px;
+}
 .container{
   background-image: url('../styles/searchPageBackground2.png');
   background-size: 100%;

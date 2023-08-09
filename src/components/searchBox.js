@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
-import '../styles/App.css';
-import {getAllMarkets, searchMarket} from '../App';
+import '../styles/homePage.css';
+import {getAllMarkets, searchMarket} from './CallAPI';
+import {useNavigate} from 'react-router-dom';
 
 
-
-const SearchBox = ({searchOption, searchValue, handdleSearchOptionChange, handleSearchInputChange, handleUpdateMarkets, setSearchOption}) => {
+const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,handdleSearchOptionChange, handleSearchInputChange, handleUpdateMarkets}) => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -17,15 +17,22 @@ const SearchBox = ({searchOption, searchValue, handdleSearchOptionChange, handle
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
+    
+    const navigate = useNavigate();
 
     const handleSearchButtonClick = async() => {
+        console.log(searchValue)
         if(searchOption.trim() === ''){
             await getAllMarkets(handleUpdateMarkets);
         }
         else{
             await searchMarket(searchOption, searchValue, handleUpdateMarkets);
         }
+
+        navigate(`/search-results/${encodeURIComponent(searchValue)}`);
     };
+
+
 
     return (
         <div className="container">

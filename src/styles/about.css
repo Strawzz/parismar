@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.about-container {
+    text-align: center;
+    background-color: rgb(220, 230, 230);
+    min-height: 100vh;
+    padding-top: 20px;
+  }
+  
+  .about-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    color: rgb(51, 61, 61);
+  }
+  
+  .about-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    margin-top: 30px;
+  }
+  
+  .about-paragraph {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }

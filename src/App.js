@@ -106,98 +106,25 @@
 // export default App;
 
 
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import axios from 'axios';
-import SearchBox from './components/searchBox';
-import About from './components/about';
-import './styles/App.css';
-
-
-export const getAllMarkets = async (setMarkets) => {
-  try {
-      const response = await axios.get(`http://localhost:8080/api/markets/all`);
-      const marketData = response.data;
-      setMarkets([marketData]);
-  } catch (error) {
-    console.error('Error fetching markets:', error.message);
-  }
-};
-
-export const searchMarket = async(searchOption, searchValue, setMarkets) => {
-  try{
-    let encodedValue = searchValue;
-    if(searchOption === 'name'){
-      encodedValue = encodeURIComponent(searchValue);
-    }
-    const response = await axios.get(`http://localhost:8080/api/markets/all`, {
-        params: {
-          [searchOption]: encodedValue,
-        },
-      });
-    const marketData = response.data;
-    setMarkets(marketData);
-    } catch (error) {
-      console.error('Error fetching markets:', error.message);
-    }
-
-
-};
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SearchResultPage from './components/SearchResultPage';
+import About from './components/About';
+import HomePage from './components/HomePage';
+import './styles/homePage.css';
 
 const App = () => {
-  const [searchOption, setSearchOption] = useState('All Markets');
-  const [searchValue, setSearchValue] = useState('');
-  const [markets, setMarkets] = useState([]);
 
-  const handleSearchOptionChange = (event) => {
-    setSearchOption(event.target.value);
-  };
-
-  const handleSearchInputChange = (event) => {
-    setSearchValue(event.target.value);
-  };
-  const handleUpdateMarkets = (newMarkets) => {
-    setMarkets(newMarkets);
-  }
+  // }
   
   return (
-    <Router>
-      <div id="header">
-        <div className="header-content">
-            <div className='h1'>
-              <Link to="/">MARKETS of Paris</Link>
-            </div>
-            <div className='h2'>
-                <Link to="/about">About</Link>
-            </div>
-            <div className='h3'>
-              <Link to="/register">Register</Link>
-              <Link to="/login">Log in</Link>
-            </div>
-        </div>
-        <SearchBox
-          searchOption={searchOption}
-          searchValue={searchValue}
-          setSearchOption={setSearchOption}
-          setSearchValue={setSearchValue}
-          handleSearchOptionChange={handleSearchOptionChange}
-          handleSearchInputChange={handleSearchInputChange}
-          handleUpdateMarkets={handleUpdateMarkets}
-          getAllMarkets={getAllMarkets}
-          searchMarket={searchMarket}
-        />
-        
-        <div>
-          {markets.map((market) => (
-            <div key={market.id}>
-              <p>Name: {market.name}</p>
-              <p>Category: {market.category}</p>
-              <p>Paris Quarter: {market.parisQuarter}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </Router>
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<About />} /> 
+            <Route path="/search-results/" element={<SearchResultPage />} />
+          </Routes>
+        </Router>
   );
 };
 
