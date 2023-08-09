@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.searchResult-container {
+    
+    background-color: rgb(253, 234, 234);
+    min-height: 100vh;
+    min-width: 100vh;
+    padding-top: 20px;
+}

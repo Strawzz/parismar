@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import '../styles/homePage.css';
-import {getAllMarkets, searchMarket} from './CallAPI';
+import {getAllMarkets, searchMarket, searchByName} from './CallAPI';
 import {useNavigate} from 'react-router-dom';
 
 
@@ -21,15 +21,20 @@ const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,h
     const navigate = useNavigate();
 
     const handleSearchButtonClick = async() => {
-        console.log(searchValue)
-        if(searchOption.trim() === ''){
-            await getAllMarkets(handleUpdateMarkets);
+    
+        let searchData;
+        if(searchOption.trim() === '' || searchOption === 'All Market'){
+            searchData = await getAllMarkets(handleUpdateMarkets);
+        }
+        else if(searchOption.trim() === 'Market Name' && searchValue != null){
+            console.log("Inside searchByName:",searchValue);
+            searchData = await searchByName(searchValue);
         }
         else{
-            await searchMarket(searchOption, searchValue, handleUpdateMarkets);
+            searchData = await searchMarket(searchOption, searchValue, handleUpdateMarkets);
         }
 
-        navigate(`/search-results/${encodeURIComponent(searchValue)}`);
+        navigate(`/search-results/${encodeURIComponent(searchValue)}`, {state: {searchData}});
     };
 
 
@@ -38,14 +43,14 @@ const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,h
         <div className="container">
             <div className="search-bar">
                 <div id="select" onClick={toggleDropdown}>
-                    <p id="selectText">{searchOption === ''? 'All markets':searchOption}</p>
+                    <p id="selectText">{searchOption === ''? 'All Markets':searchOption}</p>
                     <span>▼</span>
                     <ul id="list" className={isDropdownOpen ? 'open' : ''}>
                         <li className="options" onClick={() => handleSelectOption('All Markets')}>All Markets</li>
                         <li className="options" onClick={() => handleSelectOption('Market Name')}>Market Name</li>
-                        <li className="options" onClick={() => handleSelectOption('Day')}>Day</li>
-                        <li className="options" onClick={() => handleSelectOption('Arrondissement')}>Arrondissement</li>
-                        <li className="options" onClick={() => handleSelectOption('Category')}>Category</li>
+                        <li className="options" onClick={() => handleSelectOption('hours')}>Day</li>
+                        <li className="options" onClick={() => handleSelectOption('quarterId')}>Arrondissement</li>
+                        <li className="options" onClick={() => handleSelectOption('category')}>Category</li>
                     </ul>
                     
                 </div>
@@ -53,6 +58,7 @@ const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,h
                 type="text"
                 id="inputfield"
                 placeholder={`Search In ${searchOption}`}
+                onChange={handleSearchInputChange}
             />
             </div>
             <button className = "search-button"  onClick={handleSearchButtonClick}>

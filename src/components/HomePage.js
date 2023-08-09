@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {getAllMarkets, searchMarket} from './CallAPI';
 import SearchBox from './SearchBox';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ export const HomePage = ()=>{
   const [searchOption, setSearchOption] = useState('All Markets');
   const [searchValue, setSearchValue] = useState('');
   const [markets, setMarkets] = useState([]);
+  
 
   const handleSearchOptionChange = (event) => {
     setSearchOption(event.target.value);
@@ -18,6 +19,8 @@ export const HomePage = ()=>{
   const handleUpdateMarkets = (newMarkets) => {
     setMarkets(newMarkets);
   }
+
+  
   return (
     
       <div id="header">
@@ -43,6 +46,7 @@ export const HomePage = ()=>{
           handleUpdateMarkets={handleUpdateMarkets}
           getAllMarkets={getAllMarkets}
           searchMarket={searchMarket}
+          
         />
         <div>
           {markets.map((market) => (
