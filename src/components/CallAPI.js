@@ -69,3 +69,29 @@ export const createComment = async (loginId, marketName, userId, content) => {
         throw error;
     }
 };
+
+export const editComment = async (loginId, marketName, userId, content) => {
+    try {
+        const response = await axios.post(`http://localhost:8080/api/comments/create?loginId=${loginId}&marketName=${decodeURIComponent(marketName)}`, {
+            content: content,
+            userId: userId
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error editing comment:', error.message);
+        throw error;
+    }
+};
+
+export const deleteComment = async (commentId) => {
+    try {
+        const response = await axios.delete(`http://localhost:8080/api/comments/delete`, {
+            params:{commentId:commentId}
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error deleting comment:', error.message);
+        throw error;
+    }
+};
+
