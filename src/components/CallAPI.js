@@ -40,3 +40,32 @@ export const searchByName = async(searchValue) => {
         console.error('Error fetching markets:', error.message);
     }
 }
+
+
+
+export const getCommentsByMarketName = async (marketName) => {
+    try {
+        const response = await axios.get(`http://localhost:8080/api/comments/getAllCommentByMarketName`, {
+    params: {
+                marketName: marketName
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching comments:', error.message);
+        throw error;
+    }
+};
+
+export const createComment = async (loginId, marketName, userId, content) => {
+    try {
+        const response = await axios.post(`http://localhost:8080/api/comments/create?loginId=${loginId}&marketName=${decodeURIComponent(marketName)}`, {
+            content: content,
+            userId: userId
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error adding comment:', error.message);
+        throw error;
+    }
+};
