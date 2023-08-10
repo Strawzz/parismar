@@ -9,7 +9,7 @@ const MarketPage = () => {
     const [marketDetails, setMarketDetails] = useState(null);
     const [comments, setComments] = useState([]);
     
-    
+
 
     useEffect(() => {
         async function fetchData() {

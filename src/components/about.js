@@ -3,10 +3,11 @@ import Header from './Header';
 import '../styles/about.css';
 
 const About = () => {
+   
     return (
         <div>
             <div className="about-container">
-                <Header />
+                <Header showLoginLink={true}/>
                 <img
                     src={require('../styles/aboutImage.jpeg')} 
                     alt="About"

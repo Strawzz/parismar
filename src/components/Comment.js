@@ -13,13 +13,16 @@ const Comment = ({ comments, onCommentsUpdate, marketName }) => {
   const handleAddComment = async () => {
     if (newComment.trim() !== '' && userId.trim() !== '' && loginId.trim() !== '') {
       try {
-        await createComment(loginId, marketName, newComment, userId);
+        await createComment(loginId, marketName,userId, newComment);
         // Fetch updated comments or handle the update through your existing logic
   
         // Clear the input fields after posting the comment
         setNewComment('');
         setUserId('');
         setLoginId('');
+        if (typeof onCommentsUpdate === 'function') {
+          onCommentsUpdate();
+        }
       } catch (error) {
         console.error('Error adding comment:', error.message);
       }
