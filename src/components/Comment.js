@@ -28,7 +28,7 @@ const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) =>
 
   return (
     <div className="comment-section">
-      <h4>Comments</h4>
+      
 
       {/* <ul>
         {comments.map((comment, index) => (

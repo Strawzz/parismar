@@ -1,0 +1,111 @@
+body{
+    background-color: rgb(242, 249, 242);
+}
+
+.header {
+margin-top:1%;
+margin-bottom: 3%;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+.market-container {
+margin-bottom: 3%;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.market-details{
+    margin-bottom: 8%;
+}
+
+.market-details h1{
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 3%;
+}
+.market-details p{
+    margin-top:6%;
+    font-size: large;
+    font-family:poppins;
+}
+
+
+.map {
+margin-top: 3%;
+text-align: center;
+width: 200%; 
+}
+
+.comment-section {
+margin-left: -50%;
+text-align: center;
+}
+
+.comment-section h4{
+    font-size: large;
+    margin-bottom: 10%;
+    font-weight: 300;
+    font-family: "Brush Script MT", cursive;
+    align-items: left;
+}
+
+.comment {
+    
+    padding: 10px; 
+    margin-bottom: 5%; 
+    display: flex; 
+    margin-left: 10%;
+    justify-content:space-around; 
+}
+
+.comment-content {
+    width:100%
+}
+
+.comment-login {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 120%; 
+}
+
+.comment-text {
+    border: 1px solid #ccc; 
+    padding-right: 10%; 
+    margin:0;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    padding-left: 3%;
+    padding-right: 50%;
+
+
+} 
+.comment-actions {
+    display: flex; 
+    padding: 3%;
+}
+
+.write-comment-container {
+    margin-top: 10px; 
+    margin-left: 100%;
+  }
+  
+  /* CSS for the "Write New Comment" textarea */
+  .write-comment-container textarea {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  /* CSS for the "Write New Comment" button */
+  .write-comment-container button {
+    padding: 5px 10px;
+  }
