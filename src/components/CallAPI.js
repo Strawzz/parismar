@@ -70,11 +70,14 @@ export const createComment = async (loginId, marketName, userId, content) => {
     }
 };
 
-export const editComment = async (loginId, marketName, userId, content) => {
+export const editComment = async (comment) => {
     try {
-        const response = await axios.post(`http://localhost:8080/api/comments/create?loginId=${loginId}&marketName=${decodeURIComponent(marketName)}`, {
-            content: content,
-            userId: userId
+        const response = await axios.patch(`http://localhost:8080/api/comments/update`, {
+            loginId: comment.loginId,
+            marketName:comment.marketName,
+            userId: comment.userId,
+            content: comment.content,
+            commentId: comment.commentId
         });
         return response.data;
     } catch (error) {
