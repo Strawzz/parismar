@@ -58,7 +58,9 @@ const MarketPage = () => {
     const [marketDetails, setMarketDetails] = useState(null);
     const [comments, setComments] = useState([]);
     const [editedComment, setEditedComment] = useState({ commentId: null, content: '' });
-
+    const [likes, setLikes] = useState(0);
+    const [liked, setLiked] = useState(false);
+  
 
     useEffect(() => {
         async function fetchData() {
@@ -150,7 +152,16 @@ const MarketPage = () => {
             </div>
         );
     };
-
+    
+    const handleLikeClick = () => {
+        if (!liked) {
+            setLikes(likes + 1);
+            setLiked(true);
+            } else {
+            setLikes(likes - 1);
+            setLiked(false);
+            }
+    };
 
     if (!marketDetails) {
         return <div>Loading...</div>;
@@ -160,9 +171,15 @@ const MarketPage = () => {
         <div>
             <Header showAboutLink={true} showLoginLink={true}/>
             <h2>{marketDetails.name}</h2>
+            <button onClick={handleLikeClick}>
+                <span role="img" aria-label="Heart">
+                    {liked ? '❤️' : '🤍'}
+                </span>
+            </button>
+            <span>{likes} likes</span>
             <p>Category: {marketDetails.category}</p>
             <p>Paris Quarter: {marketDetails.parisQuarter}</p>
-             <div>
+            <div>
                 <iframe
                 src="https://opendata.paris.fr/explore/embed/dataset/marches-decouverts/map/?disjunctive.produit&disjunctive.ardt&disjunctive.jours_tenue&disjunctive.gestionnaire&basemap=jawg.dark&location=11,48.8014,2.4012&static=false&datasetcard=false&scrollWheelZoom=false"
                 width="50%"  
@@ -190,9 +207,6 @@ const MarketPage = () => {
                 </ul>
             </div>
             
-
-           
-
             {renderEditForm()}
             <Comment comments={comments} onCommentsUpdate={handleCommentsUpdate} marketName={marketDetails.name} userId={localStorage.getItem('userId')} loginId={localStorage.getItem('loginId')} />
         </div>

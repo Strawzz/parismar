@@ -3,6 +3,8 @@ import { createComment } from './CallAPI';
 
 const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) => {
   const [newComment, setNewComment] = useState('');
+  
+
 
   const handleCommentChange = (e) => {
     setNewComment(e.target.value);
@@ -21,6 +23,8 @@ const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) =>
       }
     }
   };
+
+  
 
   return (
     <div className="comment-section">
@@ -42,6 +46,7 @@ const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) =>
         onChange={handleCommentChange}
       />
       <button onClick={handleAddComment}>Add Comment</button>
+      
     </div>
   );
 };
