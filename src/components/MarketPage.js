@@ -158,11 +158,19 @@ const MarketPage = () => {
 
     return (
         <div>
-            <Header />
+            <Header showAboutLink={true} showLoginLink={true}/>
             <h2>{marketDetails.name}</h2>
             <p>Category: {marketDetails.category}</p>
             <p>Paris Quarter: {marketDetails.parisQuarter}</p>
-            
+             <div>
+                <iframe
+                src="https://opendata.paris.fr/explore/embed/dataset/marches-decouverts/map/?disjunctive.produit&disjunctive.ardt&disjunctive.jours_tenue&disjunctive.gestionnaire&basemap=jawg.dark&location=11,48.8014,2.4012&static=false&datasetcard=false&scrollWheelZoom=false"
+                width="50%"  
+                height="50%" 
+                title="Market Map"
+                ></iframe>
+            </div>
+
             <div className="comment-section">
                 <h4>Comments</h4>
                 <ul>
@@ -181,6 +189,9 @@ const MarketPage = () => {
                     ))}
                 </ul>
             </div>
+            
+
+           
 
             {renderEditForm()}
             <Comment comments={comments} onCommentsUpdate={handleCommentsUpdate} marketName={marketDetails.name} userId={localStorage.getItem('userId')} loginId={localStorage.getItem('loginId')} />
