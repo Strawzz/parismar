@@ -1,57 +1,10 @@
-// import React, { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { searchByName, getCommentsByMarketName } from './CallAPI'; 
-// import Header from './Header';
-// import Comment from './Comment';
-
-// const MarketPage = () => {
-//     const { marketName } = useParams();
-//     const [marketDetails, setMarketDetails] = useState(null);
-//     const [comments, setComments] = useState([]);
-    
-
-
-//     useEffect(() => {
-//         async function fetchData() {
-//             const details = await searchByName(marketName);
-//             setMarketDetails(details);
-
-//             const commentsData = await getCommentsByMarketName(marketName);
-//             setComments(commentsData);
-//         }
-//         fetchData();
-//     }, [marketName]);
-
-//     const handleCommentsUpdate = async () => {
-//         // Fetch updated comments after a new comment is added
-//         const updatedComments = await getCommentsByMarketName(marketName);
-//         setComments(updatedComments);
-//     };
-    
-
-//     if (!marketDetails) {
-//         return <div>Loading...</div>;
-//     }
-
-//     return (
-//         <div>
-//             <Header />
-//             <h2>{marketDetails.name}</h2>
-//             <p>Category: {marketDetails.category}</p>
-//             <p>Paris Quarter: {marketDetails.parisQuarter}</p>
-            
-//             <Comment comments={comments} onCommentsUpdate={handleCommentsUpdate} marketName={marketDetails.name} userId={localStorage.getItem('userId')} loginId={localStorage.getItem('loginId')} />
-//         </div>
-//     );
-// };
-
-// export default MarketPage;
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { searchByName, getCommentsByMarketName, deleteComment, editComment } from './CallAPI'; 
 import Header from './Header';
 import Comment from './Comment';
+import '../styles/marketPage.css';
 
 const MarketPage = () => {
     const { marketName } = useParams();
@@ -168,17 +121,21 @@ const MarketPage = () => {
     }
 
     return (
-        <div>
-            <Header showAboutLink={true} showLoginLink={true}/>
-            <h2>{marketDetails.name}</h2>
-            <button onClick={handleLikeClick}>
-                <span role="img" aria-label="Heart">
-                    {liked ? '❤️' : '🤍'}
-                </span>
-            </button>
-            <span>{likes} likes</span>
-            <p>Category: {marketDetails.category}</p>
-            <p>Paris Quarter: {marketDetails.parisQuarter}</p>
+        <div className='marketPage-container'>
+            <div className='header'>
+                <Header showAboutLink={true} showLoginLink={true}/>
+            </div>
+            <div className='market-container'>
+                    <h1>{marketDetails.name}</h1>
+                    <button onClick={handleLikeClick}>
+                        <span role="img" aria-label="Heart">
+                            {liked ? '❤️' : '🤍'}
+                        </span>
+                    </button>
+                    <span>{likes} likes</span>
+                    <p>Category: {marketDetails.category}</p>
+                    <p>Paris Quarter: {marketDetails.parisQuarter}</p>
+            </div>
             <div>
                 <iframe
                 src="https://opendata.paris.fr/explore/embed/dataset/marches-decouverts/map/?disjunctive.produit&disjunctive.ardt&disjunctive.jours_tenue&disjunctive.gestionnaire&basemap=jawg.dark&location=11,48.8014,2.4012&static=false&datasetcard=false&scrollWheelZoom=false"

@@ -33,7 +33,7 @@ const slideImages = [
 const Slideshow = () => {
     return (
         <div className="slide-container">
-            <Slide duration={1400}>
+            <Slide duration={2000}>
             {slideImages.map((slideImage, index)=> (
                 <div key={index}>
                 <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>

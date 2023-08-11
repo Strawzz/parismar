@@ -1,11 +1,170 @@
-body {
-    margin: 0;
-    padding: 0;
+body{
+    background-color: rgb(249, 244, 244);
 }
-.searchResult-container {
+
+.side-container {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
     
-    background-color: rgb(253, 234, 234);
-    min-height: 100vh;
-    min-width: 100vh;
+    overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
+
+    background-color: #fff; /* Set a background color as a fallback */
+    background-image: url('./sidebar2.jpeg');
+    background-size: cover;
+    background-repeat: repeat;
 }
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.side-container{
+    float: left;
+}
+
+.header{
+    margin-top: 2%;
+    margin-left:5%;
+}
+
+
+.content-container {
+    margin-left: 160px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+.content-section {
+    display: flex;
+}
+
+.searchResult-container{
+    flex: 1;
+    margin-top: 5%;
+    margin-left: 12%; 
+    margin-bottom: 5%;
+}
+.Result-section h3{
+    color: rgb(16, 16, 16);
+    text-decoration: none;
+    font-family: "Andale Mono", AndaleMono, monospace;
+    line-height: 1.5; 
+    margin-top: 3%;
+    position: relative; /* Needed for positioning the pseudo-element */
+    padding-left: 20px; /* Add some space for the shape */
+    transition: text-decoration 0.3s ease;
+}
+
+.Result-section h3::before {
+    content: "\273E"; /* Unicode character for a star (you can replace this with your desired shape) */
+    position: absolute;
+    left: 0; /* Position the shape at the beginning of the h3 element */
+    top: 50%; /* Vertically center the shape */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    font-size: 20px; /* Adjust the size of the shape */
+}
+  
+
+.Result-section h3:hover {
+    text-decoration: underline; /* Apply underline when hovering over the h3 element */
+}
+
+.Result-section h2{
+    margin-bottom: 5%;
+    font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+    font-weight: 700;
+    font-size: xx-large;
+    background-color: #f0f0f0; /* Add a background color */
+    padding: 10px 0;/* Add padding around the header */
+    padding-left: 20px;
+    padding-top: 15px;
+    margin-bottom: 10px; /* Add space below the header */
+    border-bottom: 2px solid #ddd; /* Add a bottom border */
+    color: #333; /* Text color */
+}
+
+
+  
+.Result-section a {
+    
+    text-decoration: none; 
+  }
+
+
+
+.images-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 15%;
+    margin-bottom: 35%;
+    width: 100%;
+    }
+
+    .images-section img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 5%;
+   
+    }
+
+    .frame{
+
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border: 10px solid #ccc7be;
+    margin-bottom: 60%;
+    
+}
+
+.frame::before,
+.frame::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid #ccc;
+}
+
+.frame::before {
+    z-index: -1;
+    background-color: #ddd;
+}
+
+.frame img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+#image1{
+    margin-right: 20%;
+    
+}
+
+#image2{
+    margin-left: 20%;
+}
+
+#image3{
+    margin-right: 25%;
+}
+
+#image4{
+    margin-left: 25%;
+}
+
+
