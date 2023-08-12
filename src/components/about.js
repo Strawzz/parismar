@@ -11,6 +11,7 @@ const About = () => {
         <div>
             <div className="about-container">
                 <Header showLoginLink={true}/>
+                <div className='about-title'>About</div>
                 <Slideshow /> 
                 <h2 className="about-title">About Markets in Paris</h2>
                 <p className="about-paragraph">
