@@ -119,15 +119,51 @@ body{
 
     }
 
-.frame{
-
+.frame1{
     padding: 10px;
     margin: 10px;
     display: inline-block;
     background-color: #fff;
     position: relative;
     box-shadow: 0px 0px 30px #1c150c(239, 96, 7, 0.3);
-    border: 10px solid #5e3129;
+    border: 10px solid #6c382f;
+    margin-bottom: 70%;
+    margin-top: 10%;
+    
+}
+.frame2{
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0px 0px 30px #1c150c(239, 96, 7, 0.3);
+    border: 10px solid #795929;
+    margin-bottom: 70%;
+    margin-top: 10%;
+    
+}
+
+.frame3{
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0px 0px 30px #1c150c(239, 96, 7, 0.3);
+    border: 10px solid #593e2b;
+    margin-bottom: 70%;
+    margin-top: 10%;
+    
+}
+.frame4{
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0px 0px 30px #1c150c(239, 96, 7, 0.3);
+    border: 10px solid #312525;
     margin-bottom: 70%;
     margin-top: 10%;
     

@@ -141,6 +141,8 @@ const MarketPage = () => {
                                 <p>Category: {marketDetails.category}</p>
                                 <p>Paris Quarter: {marketDetails.parisQuarter}</p>
                                 <p>Hours: {marketDetails.hours}</p>
+                                <p>Address: {marketDetails.address}</p>
+
                             </div>
                     
 

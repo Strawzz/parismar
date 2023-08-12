@@ -40,14 +40,14 @@ const SearchResultPage = () => {
                   <div className='title'>
                       <p1>Les Halles -- The Lost Market</p1>
                   </div>
-                  <div className="frame" id='image1'>
+                  <div className="frame1" id='image1'>
                     <img src={les_Halles3} alt="Image 1" />
                   </div >
                   <div className="paragraph1">
                       <p2>Les Halles was Paris's central market from the middle ages to the twentieth century. For centuries it was the place to buy produce, meats, dry goods, textiles, etc., serving as the city's main business hub. </p2>
                   </div>
 
-                  <div className="frame" id='image2'>
+                  <div className="frame2" id='image2'>
                     <img src={les_Halles2} alt="Image 2" />
                   </div>
 
@@ -55,14 +55,14 @@ const SearchResultPage = () => {
                       <p3>By the mid-1800s Les Halles featured an immense network of glass pavilions to accommodate the city's plethora of food stands and artisanal merchants -- with Émile Zola famously calling it "le ventre," or "the belly of Paris."</p3>
                   </div>
 
-                  <div className="frame" id='image3'>
+                  <div className="frame3" id='image3'>
                     <img src={les_Halles1} alt="Image 3" />
                   </div>
 
                   <div className='paragraph3'>
                       <p4>However, in the 1970s its purpose had become out-moded, with most merchants having moved on to burgeoning super markets such as Casino and Carrefour. It was then demolished and made into an undergound mall and transit station.  </p4>
                   </div>
-                  <div className="frame" id='image4'>
+                  <div className="frame4" id='image4'>
                     <img src={les_Halles4} alt="Image 4" />
                   </div>
                   <div className='paragraph4'>
