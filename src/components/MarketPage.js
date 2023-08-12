@@ -132,65 +132,80 @@ const MarketPage = () => {
     return (
         <div className='marketPage-container'>
 
-            <div className='header'>
+            <div className='marketPage-header'>
                 <Header showAboutLink={true} showLoginLink={true}/>
             </div>
 
-            <div className='content-container'>
+            <div className='marketP-content-container'>
+                
+                <div className="left-container">
 
-                    <div className='market-container'>
-                            <div className='market-details'>
-                                <h1>{marketDetails.name}</h1>
-                                <button onClick={handleLikeClick}>
-                                    <span role="img" aria-label="Heart">
-                                        {liked ? '❤️' : '🤍'}
-                                    </span>
-                                </button>
-        
-                                <p>Category: {marketDetails.category}</p>
-                                <p>Paris Quarter: {marketDetails.parisQuarter}</p>
-                                <p>Hours: {marketDetails.hours}</p>
-                                <p>Address: {marketDetails.address}</p>
+                        <div className='market-container'>
+                                <div className='market-details'>
+                                    <h1>{marketDetails.name}</h1>
+                                    <button onClick={handleLikeClick}>
+                                        <span role="img" aria-label="Heart">
+                                            {liked ? '❤️' : '🤍'}
+                                        </span>
+                                    </button>
+            
+                                    <p>Category: {marketDetails.category}</p>
+                                    <p>Paris Quarter: {marketDetails.parisQuarter}</p>
+                                    <p>Hours: {marketDetails.hours}</p>
+                                    <p>Address: {marketDetails.address}</p>
 
+                                </div>
+                        
+
+                        
+                        </div>
+
+                        <div className="comment-section">
+                            <h4>Comments</h4>
+
+                            <ul>
+                                {comments.map((comment, index) => (
+                                    <li className="comment" key={index}>
+                                        <p className="comment-login">@{comment.loginId}</p>
+                                        <p className="comment-text">{comment.content}</p>
+                                        {comment.loginId === localStorage.getItem('loginId') && (
+                                            <div className='comment-actions'>
+                                                <button onClick={() => handleDeleteComment(comment.commentId)}>Delete</button>
+                                                <button onClick={() => setEditedComment({ commentId: comment.commentId, content: comment.content })}>Edit</button>
+                                            </div>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <div className='write-comment-comtainer'>
+                                {renderEditForm()}
+                                <Comment comments={comments} onCommentsUpdate={handleCommentsUpdate} marketName={marketDetails.name} userId={localStorage.getItem('userId')} loginId={localStorage.getItem('loginId')} />
                             </div>
+                        </div>
+                </div>
+                
+                <div className='right-section'>
+                                <div className='map'>
+                                        <iframe
+                                        src="https://opendata.paris.fr/explore/embed/dataset/marches-decouverts/map/?disjunctive.produit&disjunctive.ardt&disjunctive.jours_tenue&disjunctive.gestionnaire&basemap=jawg.dark&location=11,48.8014,2.4012&static=false&datasetcard=false&scrollWheelZoom=false"
+                                        width="100%"  
+                                        height="100%" 
+                                        title="Market Map"
+                                        ></iframe>
+                                </div>
+                                <div className='directions-button'>
+                                    <button onClick={handleDirectionsClick}>Directions</button>
+                                </div>
                     
+                </div> 
 
-                            <div className='map'>
-                                <iframe
-                                src="https://opendata.paris.fr/explore/embed/dataset/marches-decouverts/map/?disjunctive.produit&disjunctive.ardt&disjunctive.jours_tenue&disjunctive.gestionnaire&basemap=jawg.dark&location=11,48.8014,2.4012&static=false&datasetcard=false&scrollWheelZoom=false"
-                                width="100%"  
-                                height="60%" 
-                                title="Market Map"
-                                ></iframe>
-                            </div>
-                            <div className='directions-button'>
-                                <button onClick={handleDirectionsClick}>Directions</button>
-                            </div>
-                    </div>
-                    <div className="comment-section">
-                        <h4>Comments</h4>
-                        <ul>
-                            {comments.map((comment, index) => (
-                                <li className="comment" key={index}>
-                                    <p className="comment-login">@{comment.loginId}</p>
-                                    <p className="comment-text">{comment.content}</p>
-                                    {comment.loginId === localStorage.getItem('loginId') && (
-                                        <div className='comment-actions'>
-                                            <button onClick={() => handleDeleteComment(comment.commentId)}>Delete</button>
-                                            <button onClick={() => setEditedComment({ commentId: comment.commentId, content: comment.content })}>Edit</button>
-                                        </div>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+
             </div>
-            <div className='write-comment-comtainer'>
-                {renderEditForm()}
-                <Comment comments={comments} onCommentsUpdate={handleCommentsUpdate} marketName={marketDetails.name} userId={localStorage.getItem('userId')} loginId={localStorage.getItem('loginId')} />
-            </div>
+            
         </div>
     );
+
 };
 
 export default MarketPage;

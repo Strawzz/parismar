@@ -16,7 +16,7 @@ const SearchResultPage = () => {
   return (
     <div>
           <div className='side-container'></div>
-          <div className='header'>
+          <div className='searchR-header'>
               <Header showAboutLink={true} showLoginLink={true}/>
           </div>
       <div className="content-container">
