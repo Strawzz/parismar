@@ -86,7 +86,16 @@ const MarketPage = () => {
         }
     };
     
+    const handleDirectionsClick = () => {
+        // Get the market's address
+        const marketAddress = encodeURIComponent(marketDetails.address);
 
+        // Create a Google Maps URL with the address as the search query
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${marketAddress}`;
+
+        // Open the URL in a new tab/window
+        window.open(mapsUrl, '_blank');
+    };
 
 
     const renderEditForm = () => {
@@ -153,6 +162,9 @@ const MarketPage = () => {
                                 height="60%" 
                                 title="Market Map"
                                 ></iframe>
+                            </div>
+                            <div className='directions-button'>
+                                <button onClick={handleDirectionsClick}>Directions</button>
                             </div>
                     </div>
                     <div className="comment-section">
