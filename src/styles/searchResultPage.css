@@ -2,7 +2,7 @@
 body{
     background-color: rgb(249, 244, 244);
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #e9d9ce, #c68f6a); /* Use a gradient */
+    background: linear-gradient(to bottom, #fbefe9, rgb(155, 89, 44)); /* Use a gradient */
     background-repeat: repeat;
 }
 .side-container {
@@ -85,7 +85,7 @@ body{
     font-weight: 800;
     font-size: xx-large;
     /* background-color: #c1a592;  */
-    background: linear-gradient(to right, #c1a592, #e9d9ce);
+    background: linear-gradient(to right, #d0ac90, #e9d9ce);
     padding: 10px 0;/* Add padding around the header */
     padding-left: 20px;
     padding-top: 15px;
@@ -127,7 +127,7 @@ body{
     background-color: #fff;
     position: relative;
     box-shadow: 0px 0px 30px #1c150c(239, 96, 7, 0.3);
-    border: 10px solid #7a5c2e;
+    border: 10px solid #5e3129;
     margin-bottom: 70%;
     margin-top: 10%;
     
