@@ -104,13 +104,15 @@ const MarketPage = () => {
         }
 
         return (
-            <div>
-                <input
+            <div className='edit-container'>
+                <input className='edit-input'
                     type="text"
                     value={editedComment.content}
                     onChange={(e) => setEditedComment({ ...editedComment, content: e.target.value })}
                 />
-                <button onClick={() => handleEditComment(editedComment)}>Submit</button>
+                <div className='sumbitEditButton'>
+                    <button className='edit-submit' onClick={() => handleEditComment(editedComment)}>Submit</button>
+                </div>
             </div>
         );
     };
@@ -171,7 +173,7 @@ const MarketPage = () => {
                             </div>
                             <ul>
                                 {comments.map((comment, index) => (
-                                    <li className="comment" key={index}>
+                                    <li className="old-comment-details" key={index}>
                                         <p className="comment-login">@{comment.loginId}</p>
                                         <p className="comment-text">{comment.content}</p>
                                         {comment.loginId === localStorage.getItem('loginId') && (

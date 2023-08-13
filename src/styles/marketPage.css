@@ -127,6 +127,90 @@
 }
 
 
+.old-comment-details {
+padding: 15px;
+
+margin-top: 2%;
+background-color: rgb(243, 217, 220);
+display: flex;
+align-items: center;
+width: 45%;
+border-radius: 10px;
+border-style: inset;
+margin-left:1%;
+}
+
+.comment-login {
+font-family: poppins;
+font-weight: bold;
+margin-right: 10px;
+list-style-type: none; /* Remove the default bullet point */
+}
+
+
+.comment-actions button {
+    margin-right: 5px; 
+    background-color: rgb(219, 140, 148);
+    border-radius: 6px;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comment-actions button:hover {
+background-color: rgb(209, 101, 112);
+transform: scale(1.05);
+}
+
+.comment-text {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: large;
+    font-family: poppins;
+}
+.edit-container{
+    margin-left: 20%;
+    margin-top: 4%;
+    
+}
+
+.edit-input{
+    
+padding: 8px;
+font-size: 16px;
+border: 1px solid #af6969;
+border-radius: 5px;
+resize: vertical; /* Allow vertical resizing */
+min-height: 100px; /* Set a minimum height */
+width: 27.5%;
+margin-left: -11%;
+margin-top: 1%;
+}
+.edit-input:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: rgb(211, 28, 46); /* Set a custom border color when focused */
+    box-shadow: 0 0 3px rgb(138, 90, 95); /* Add a subtle shadow when focused */
+}
+
+.edit-submit{
+background-color: rgb(217, 146, 153);
+color: white;
+border: none;
+border-radius: 8px;
+padding: 8px 16px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+.sumbitEditButton{
+    margin-left: 16.5%;;
+    margin-top: -2.5%;
+}
+
+
 
 .map{
     margin-top: 80%;
@@ -141,7 +225,7 @@
     margin-top: 0.5%;
     margin-left: -2%;
     display: inline-block;
-    background-color: #adb7ad;
+    background-color: #d2d8d2;
     padding: 3px ;
     border: none;
     border-radius: 5px;
