@@ -50,17 +50,21 @@ const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,h
                         <li className="options" onClick={() => handleSelectOption('Market Name')}>Market Name</li>
                         <li className="options" onClick={() => handleSelectOption('hours')}>Day</li>
                         <li className="options" onClick={() => handleSelectOption('quarterId')}>Arrondissement</li>
-                        <li className="options" onClick={() => handleSelectOption('category')}>Category</li>
+                        <li className="options" onClick={() => handleSelectOption('Category')}>Category</li>
                     </ul>
                     
                 </div>
-            <input
-                type="text"
-                id="inputfield"
-                placeholder={`Search In ${searchOption}`}
-                onChange={handleSearchInputChange}
-            />
-            </div>
+                    <input
+                    type="text"
+                    id="inputfield"
+                    placeholder={
+                        searchOption === 'category'
+                            ? 'Food, Organic, Flowers, Birds, Stamps, Flea Market, Second-Hand, Art'
+                            : `Search In ${searchOption}`
+                    }
+                    onChange={handleSearchInputChange}
+                    />
+                </div>
             <button className = "search-button"  onClick={handleSearchButtonClick}>
                 <img src={require('../styles/searchIcon.png')} alt="Search Icon" /></button>
         </div>

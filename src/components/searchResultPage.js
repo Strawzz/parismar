@@ -14,7 +14,7 @@ const SearchResultPage = () => {
   const { searchData } = location.state || {};
 
   return (
-    <div>
+    <div className='searchRP-container'>
           <div className='side-container'></div>
           <div className='searchR-header'>
               <Header showAboutLink={true} showLoginLink={true}/>
@@ -22,19 +22,29 @@ const SearchResultPage = () => {
       <div className="content-container">
             <div className="content-section">
                 <div className="searchResult-container">
-                  {searchData && (
-                    <div className="Result-section">
-                      <h2>Search Results</h2>
-                      {/* <pre>{JSON.stringify(searchData, null, 2)}</pre> */}
-                      {searchData.map((market) => (
+                  <div className="Result-section">
+                    <h2>Search Results</h2>
+                      {Array.isArray(searchData) ? (
+                        searchData.length > 0 ? (
+                          searchData.map((market) => (
                             <div key={market.name}>
                               <Link to={`/market/${encodeURIComponent(market.name)}`}>
                                 <h3>{market.name}</h3>
                               </Link>
                             </div>
-                      ))}
-                    </div>
-                  )}
+                          ))
+                        ) : (
+                          <p>No results found.</p>
+                        )
+                      ) : (
+                        // Render the single market when searchData is not an array
+                        <div key={searchData.name}>
+                          <Link to={`/market/${encodeURIComponent(searchData.name)}`}>
+                            <h3>{searchData.name}</h3>
+                          </Link>
+                        </div>
+                      )}
+                  </div>
                 </div>
                 <div className="images-section">
                   <div className='title'>

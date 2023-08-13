@@ -21,8 +21,9 @@ const spanStyle = {
 
 const containerStyle = {
     position: 'relative', // Position the container to handle child positioning
-    maxWidth: '1200px', // Adjust the container width as needed
+    maxWidth: '1000px', // Adjust the container width as needed
     margin: '0 auto', // Center the container horizontally
+    
 }
 
 const divStyle = {
@@ -32,8 +33,8 @@ const divStyle = {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    height: '700px',
-    width: '85%',
+    height: '750px',
+    width: '100%',
     position: 'relative', // Ensure relative positioning for the caption
 }
 

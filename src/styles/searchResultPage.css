@@ -1,9 +1,10 @@
 
-body{
+.searchRP-container{
     background-color: rgb(249, 244, 244);
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #fbefe9, rgb(155, 89, 44)); /* Use a gradient */
     background-repeat: repeat;
+    padding-top: 2%;
 }
 .side-container {
     height: 100%; /* Full-height: remove this if you want "auto" height */
