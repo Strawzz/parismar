@@ -133,7 +133,7 @@
     margin-left: -220%;
     margin-bottom: 10%;
     width: 170%;
-    height: 70%;
+    height: 60%;
 
 }
 
@@ -141,7 +141,7 @@
     margin-top: 0.5%;
     margin-left: -2%;
     display: inline-block;
-    background-color: #97af97;
+    background-color: #adb7ad;
     padding: 3px ;
     border: none;
     border-radius: 5px;
@@ -154,7 +154,7 @@
     margin-left: -1%;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #e1eae1;
+    background-color: #dfe5df;
     color: #3c4f3c;
     padding: 10px 20px;
     border-color: #a4c4a4;
@@ -164,13 +164,13 @@
 }
 
 .directions-button:hover {
-    background-color: #99b199;
+    background-color: #6c886c;
     transform: scale(1.05);
 }
 
 .section-divider {
     height: 3px; /* Adjust the height of the divider */
-    width: 45%; /* Make the divider span the full width of its container */
+    width: 50%; /* Make the divider span the full width of its container */
     border-top: 1px dotted rgb(112, 92, 94); /* Dotted line with the specified color */
     margin-top: 10px
 }

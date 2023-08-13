@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createComment } from './CallAPI';
+import '../styles/comment.css';
 
 const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) => {
   const [newComment, setNewComment] = useState('');
@@ -27,26 +28,16 @@ const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) =>
   
 
   return (
-    <div className="comment-section">
-      
-
-      {/* <ul>
-        {comments.map((comment, index) => (
-          <li key={index}>
-            <p>@{comment.loginId}</p>
-            <p>{comment.content}</p>
-            <button>Like</button>
-          </li>
-        ))}
-      </ul> */}
-
+    <div className="comment-content-section">
       <textarea
+        className="comment-input"
         placeholder="Add a comment..."
         value={newComment}
         onChange={handleCommentChange}
       />
-      <button onClick={handleAddComment}>Add Comment</button>
-      
+      <button className="comment-button" onClick={handleAddComment}>
+        <strong>Submit</strong>
+      </button>
     </div>
   );
 };
