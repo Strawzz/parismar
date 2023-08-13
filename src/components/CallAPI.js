@@ -13,6 +13,14 @@ export const getAllMarkets = async () => {
 };
 
 export const searchMarket = async (searchOption, searchValue) => {
+    const optionMappings = {
+    'Day': 'hours',
+    'Arrondissement': 'quarterId',
+    'Category': 'category'
+  };
+    
+    searchOption = optionMappings[searchOption];
+    
     try {
         
         const response = await axios.get(`http://localhost:8080/api/markets/all`, {

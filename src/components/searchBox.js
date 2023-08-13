@@ -8,6 +8,7 @@ import {useNavigate} from 'react-router-dom';
 const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,handdleSearchOptionChange, handleSearchInputChange, handleUpdateMarkets}) => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    
 
     const handleSelectOption = (option) => {
         setSearchOption(option);
@@ -27,7 +28,7 @@ const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,h
             searchData = await getAllMarkets(handleUpdateMarkets);
         }
         else if(searchOption.trim() === 'Market Name' && searchValue != null){
-            console.log("Inside searchByName:",searchValue);
+           
             searchData = await searchByName(searchValue);
         }
         else{
@@ -48,8 +49,8 @@ const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,h
                     <ul id="list" className={isDropdownOpen ? 'open' : ''}>
                         <li className="options" onClick={() => handleSelectOption('All Markets')}>All Markets</li>
                         <li className="options" onClick={() => handleSelectOption('Market Name')}>Market Name</li>
-                        <li className="options" onClick={() => handleSelectOption('hours')}>Day</li>
-                        <li className="options" onClick={() => handleSelectOption('quarterId')}>Arrondissement</li>
+                        <li className="options" onClick={() => handleSelectOption('Day')}>Day</li>
+                        <li className="options" onClick={() => handleSelectOption('Arrondissement')}>Arrondissement</li>
                         <li className="options" onClick={() => handleSelectOption('Category')}>Category</li>
                     </ul>
                     
@@ -58,9 +59,9 @@ const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,h
                     type="text"
                     id="inputfield"
                     placeholder={
-                        searchOption === 'category'
-                            ? 'Food, Organic, Flowers, Birds, Stamps, Flea Market, Second-Hand, Art'
-                            : `Search In ${searchOption}`
+                        searchOption === 'Category'
+                        ? 'Food, Organic, Flowers, Birds, Stamps, Flea Market, Second-Hand, Art'
+                        : (searchOption === 'Arrondissement' ? '1 - 20' : `Search In ${searchOption}`)
                     }
                     onChange={handleSearchInputChange}
                     />
