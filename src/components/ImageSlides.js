@@ -32,8 +32,8 @@ const divStyle = {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    height: '900px',
-    width: '100%',
+    height: '700px',
+    width: '85%',
     position: 'relative', // Ensure relative positioning for the caption
 }
 
@@ -69,7 +69,7 @@ const slideImages = [
 const Slideshow = () => {
     return (
         <div className="slide-container" style={containerStyle}>
-            <Slide duration={1000}>
+            <Slide duration={3000}>
                 {slideImages.map((slideImage, index) => (
                     <div key={index} style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}>
                         <span style={spanStyle}>{slideImage.caption}</span>

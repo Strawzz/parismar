@@ -38,19 +38,21 @@
 
 .slideshow-section{
   margin-top:3%;
+  margin-left: 10%;
 
 }
   
 .about-paragraph {
   margin-top: 4%;
   line-height: 1.5;
-  width: 50%;
+  width: 40%;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 540;
   font-size: x-large;
-  margin-left: 25%;
+  margin-left: 31%;
   text-indent: 2em; /* Set the indentation size (adjust as needed) */
   color:black;
+  text-align: left;
 }
 
 
