@@ -24,7 +24,7 @@ const SearchResultPage = () => {
                 <div className="searchResult-container">
                   <div className="Result-section">
                     <h2>Search Results</h2>
-                      {Array.isArray(searchData) ? (
+                      {searchData ? (Array.isArray(searchData) ? (
                         searchData.length > 0 ? (
                           searchData.map((market) => (
                             <div key={market.name}>
@@ -43,6 +43,9 @@ const SearchResultPage = () => {
                             <h3>{searchData.name}</h3>
                           </Link>
                         </div>
+                          )
+                    ) : (
+                        <p>No search data available.</p>
                       )}
                   </div>
                 </div>

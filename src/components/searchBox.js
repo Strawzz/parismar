@@ -60,7 +60,7 @@ const SearchBox = ({searchOption, searchValue, setSearchOption, setSearchValue,h
                     id="inputfield"
                     placeholder={
                         searchOption === 'Category'
-                        ? 'Food, Organic, Flowers, Birds, Stamps, Flea Market, Second-Hand, Art'
+                        ? 'food, organic, flowers, birds, stamps, flea market, second-hand, art'
                         : (searchOption === 'Arrondissement' ? '1 - 20' : `Search In ${searchOption}`)
                     }
                     onChange={handleSearchInputChange}
