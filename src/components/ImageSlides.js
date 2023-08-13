@@ -4,8 +4,10 @@ import 'react-slideshow-image/dist/styles.css'
 import aboutImage from '../styles/aboutImage.jpeg';
 import show1 from '../styles/show1.jpeg';
 import show2 from '../styles/show2.jpeg';
-import show3 from '../styles/show3.jpeg';
 import show4 from '../styles/show4.jpeg';
+import show5 from '../styles/show5.jpeg';
+import show6 from '../styles/show6.jpeg';
+import show7 from '../styles/show7.jpeg';
 
 const spanStyle = {
     padding: '20px',
@@ -19,7 +21,7 @@ const spanStyle = {
 
 const containerStyle = {
     position: 'relative', // Position the container to handle child positioning
-    maxWidth: '800px', // Adjust the container width as needed
+    maxWidth: '1200px', // Adjust the container width as needed
     margin: '0 auto', // Center the container horizontally
 }
 
@@ -30,7 +32,7 @@ const divStyle = {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    height: '600px',
+    height: '900px',
     width: '100%',
     position: 'relative', // Ensure relative positioning for the caption
 }
@@ -38,20 +40,30 @@ const divStyle = {
 const slideImages = [
     {
         url: show1,
-        caption: 'Slide 1'
-    },
-    {
-        url: show2,
-        caption: 'Slide 2'
-    },
-    {
-        url: show3,
-        caption: 'Slide 3'
+        caption: 'Interior view of Les Halles showing the immensity of the glass pavilion’s structure. '
     },
     {
         url: show4,
-        caption: 'Slide 4'
+        caption: 'Women selling escargot in the Les Halles. '
     },
+    {
+        url: show5,
+        caption: 'Merchants setting up their stands for the day, early 1900s. '
+    },
+
+    {
+        url: show6,
+        caption: 'Another covered market, Marché des Patriarches, popularized during the 1800s. Like Les Halles, it was demolished after WW2.  '
+    },
+    {
+        url: show2,
+        caption: '"Un marché de puces,” or flea market set up outside Les Halles in the late 1800s. '
+    },
+    {
+        url: show7,
+        caption: 'An open-air farmers market circa 1900.'
+    },
+
 ];
 
 const Slideshow = () => {
