@@ -1,7 +1,6 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import aboutImage from '../styles/aboutImage.jpeg';
 import show1 from '../styles/show1.jpeg';
 import show2 from '../styles/show2.jpeg';
 import show4 from '../styles/show4.jpeg';
