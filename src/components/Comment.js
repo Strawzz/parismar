@@ -4,6 +4,7 @@ import '../styles/comment.css';
 
 const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) => {
   const [newComment, setNewComment] = useState('');
+  const [error, setError] = useState('');
   
 
 
@@ -12,7 +13,7 @@ const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) =>
   };
 
   const handleAddComment = async () => {
-    if (newComment.trim() !== '' && userId.trim() !== '' && loginId.trim() !== '') {
+    if (newComment.trim() !== '' && userId && userId.trim() !== '' && loginId && loginId.trim() !== '') {
       try {
         await createComment(loginId, marketName, userId, newComment);
         setNewComment('');
@@ -22,6 +23,10 @@ const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) =>
       } catch (error) {
         console.error('Error adding comment:', error.message);
       }
+    }
+    else {
+      console.error('Error: Please fill in all required fields.');
+      setError('Please log in first!');
     }
   };
 
@@ -38,6 +43,9 @@ const Comment = ({ comments, onCommentsUpdate, marketName, userId, loginId }) =>
       <button className="comment-button" onClick={handleAddComment}>
         <strong>Submit</strong>
       </button>
+      <div className='errorSection'>
+        {error && <p className="error-message">{error}</p>}
+      </div>
     </div>
   );
 };
