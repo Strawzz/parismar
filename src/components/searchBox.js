@@ -1,4 +1,3 @@
-
 import React, { useState} from 'react';
 import '../styles/homePage.css';
 import {getAllMarkets, searchMarket, searchByName} from './CallAPI';
