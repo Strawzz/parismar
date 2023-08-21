@@ -12,16 +12,16 @@ const spanStyle = {
     padding: '20px',
     background: '#efefef',
     color: '#000000',
-    position: 'absolute', // Position the caption absolutely within the slide's div
-    bottom: '0', // Place the caption at the bottom of the div
-    width: '100%', // Make the caption span the full width of the div
-    boxSizing: 'border-box', // Include padding in the full width
+    position: 'absolute', 
+    bottom: '0',
+    width: '100%', 
+    boxSizing: 'border-box', 
 }
 
 const containerStyle = {
-    position: 'relative', // Position the container to handle child positioning
-    maxWidth: '1000px', // Adjust the container width as needed
-    margin: '0 auto', // Center the container horizontally
+    position: 'relative', 
+    maxWidth: '1000px', 
+    margin: '0 auto', 
     
 }
 
@@ -34,7 +34,7 @@ const divStyle = {
     backgroundPosition: 'center',
     height: '750px',
     width: '100%',
-    position: 'relative', // Ensure relative positioning for the caption
+    position: 'relative', 
 }
 
 const slideImages = [

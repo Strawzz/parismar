@@ -36,7 +36,7 @@ const SearchResultPage = () => {
                           <p>No results found.</p>
                         )
                       ) : (
-                        // Render the single market when searchData is not an array
+                      
                         <div key={searchData.name}>
                           <Link to={`/market/${encodeURIComponent(searchData.name)}`}>
                             <h3>{searchData.name}</h3>

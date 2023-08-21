@@ -234,7 +234,7 @@ transition: background-color 0.3s;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-   
+
 }
 .directions-button button{
     margin-top: 0.5%;
@@ -256,9 +256,9 @@ transition: background-color 0.3s;
 }
 
 .section-divider {
-    height: 3px; /* Adjust the height of the divider */
-    width: 50%; /* Make the divider span the full width of its container */
-    border-top: 1px dotted rgb(112, 92, 94); /* Dotted line with the specified color */
+    height: 3px; 
+    width: 50%; 
+    border-top: 1px dotted rgb(112, 92, 94); 
     margin-top: 10px
 }
 

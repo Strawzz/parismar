@@ -11,17 +11,17 @@ padding: 8px;
 font-size: 16px;
 border: 1px solid #ddd;
 border-radius: 5px;
-resize: vertical; /* Allow vertical resizing */
-min-height: 100px; /* Set a minimum height */
+resize: vertical; 
+min-height: 100px; 
 max-width: 400px;
 margin-left: 11%;
 margin-top: 1%;
 }
 
 .comment-input:focus {
-    outline: none; /* Remove the default focus outline */
-    border-color: rgb(209, 101, 112); /* Set a custom border color when focused */
-    box-shadow: 0 0 3px rgb(176, 118, 124); /* Add a subtle shadow when focused */
+    outline: none; 
+    border-color: rgb(209, 101, 112); 
+    box-shadow: 0 0 3px rgb(176, 118, 124); 
 }
 
 .comment-button {

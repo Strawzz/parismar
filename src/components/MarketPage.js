@@ -13,7 +13,7 @@ const MarketPage = () => {
     const [editedComment, setEditedComment] = useState({ commentId: null, content: '' });
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
-  
+
 
     useEffect(() => {
         async function fetchData() {
@@ -27,7 +27,7 @@ const MarketPage = () => {
     }, [marketName]);
 
     const handleCommentsUpdate = async () => {
-        // Fetch updated comments after a new comment is added
+    
         const updatedComments = await getCommentsByMarketName(marketName);
         setComments(updatedComments);
     };
@@ -43,21 +43,10 @@ const MarketPage = () => {
         }
     };
 
-    // const handleEditComment = async(comment) => {
-    //     try{
-    //         await editComment(comment);
-
-    //         const updatedComments = await getCommentsByMarketName(marketName);
-    //         setComments(updatedComments);
-    //     }
-    //     catch(error){
-    //         console.error('Error editing comment:', error.message);
-    //     }
-    // }
-
+    
     const handleEditComment = async (editedContent, commentId) => {
         try {
-            // Get userId and loginId from localStorage
+    
             const userId = localStorage.getItem('userId');
             const loginId = localStorage.getItem('loginId');
 
@@ -65,7 +54,7 @@ const MarketPage = () => {
                 console.error('User is not logged in');
                 return;
             }
-            // Create the complete comment object
+    
             const updatedComment = {
                 userId: userId,
                 loginId: loginId,
@@ -74,11 +63,11 @@ const MarketPage = () => {
                 content: editedContent.content,
             };
     
-            // Call the editComment API function with the complete comment object
+        
             await editComment(updatedComment);
             setEditedComment({ commentId: null, content: '' });
 
-            // Update the comments after the edit
+        
             const updatedComments = await getCommentsByMarketName(marketName);
             setComments(updatedComments);
         } catch (error) {
@@ -87,13 +76,12 @@ const MarketPage = () => {
     };
     
     const handleDirectionsClick = () => {
-        // Get the market's address
+
         const marketAddress = encodeURIComponent(marketDetails.address);
 
-        // Create a Google Maps URL with the address as the search query
+    
         const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${marketAddress}`;
 
-        // Open the URL in a new tab/window
         window.open(mapsUrl, '_blank');
     };
 

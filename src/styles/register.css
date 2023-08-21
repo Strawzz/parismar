@@ -6,20 +6,20 @@
     padding-top: 2%;
   }
   
-  /* Header section */
+
   .registerHeader {
     width: 90%;
     margin-left: 5%;
   
   }
   
-  /* Title for the registration form */
+
   .registerTitle {
     font-size: 24px;
     margin-bottom: 10px;
   }
   
-  /* Registration form section */
+
   .register-section {
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     
   }
   
-  /* Registration form input fields */
+
   .register-section input {
     width: 100%;
     padding: 10px;
@@ -40,7 +40,7 @@
     font-size: large;
   }
   
-  /* Registration form submit button */
+
 .register-section button {
     padding: 10px 20px;
     background-color: #2980b9;

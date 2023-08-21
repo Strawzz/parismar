@@ -13,13 +13,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* 100% of the viewport height */
+    height: 100vh; 
     margin-top: -10%;
   }
   
-  /* Styling for the login box */
+
   .login-section {
-    background-color: #ffffff; /* Background color for the login box */
+    background-color: #ffffff; 
     padding: 20px;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
@@ -29,7 +29,7 @@
     text-align: center;
   }
   
-  /* Style the login button */
+
   .login-section button {
     background-color: #3498db;
     color: #ffffff;
@@ -44,7 +44,7 @@
     background-color: #2980b9;
   }
   
-  /* Style the login input field */
+
   .login-section input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -55,13 +55,13 @@
     outline: none;
   }
   
-  /* Style the message paragraph */
+
   .login-section p {
     margin-top: 10px;
     font-size: 14px;
   }
   
-  /* Style the logout button */
+
   .login-section button#logout-button {
     background-color: #e74c3c;
   }
